@@ -1,18 +1,14 @@
 function isSameType(value1, value2) {
   //your js code here
-	// Attempt to convert to numbers. If not successful, they remain strings.
-  const convertedValue1 = isNaN(Number(value1)) ? value1 : Number(value1);
-  const convertedValue2 = isNaN(Number(value2)) ? value2 : Number(value2);
-
-	console.log(typeof(convertedValue1));
-	console.log(typeof(convertedValue2));
-	
-  return typeof convertedValue1 === typeof convertedValue2;
-	
-	// if (Number.isNaN(value1) && Number.isNaN(value2)) {
- //    return true;
- //  }
- //  return typeof(value1) === typeof(value2);
+	const convertedValue1 = Number(value1);
+  const convertedValue2 = Number(value2);
+  if ((Number.isNaN(convertedValue1) && Number.isNaN(convertedValue2)) ||
+      (!Number.isNaN(convertedValue1) && !Number.isNaN(convertedValue2) && typeof convertedValue1 === typeof convertedValue2)) 
+  {
+    return true;
+  } else {
+    return false;
+  }
 }  
  
 //do not change the code below.
